@@ -1,10 +1,29 @@
 <html>
-<script id="shader-fs" type="x-shader/x-fragment" src="frag.glsl"> </script>
-<script id="shader-vs" type="x-shader/x-vertex" src="vert.glsl"></script>
-<script src="https://raw.githack.com/toji/gl-matrix/master/dist/gl-matrix.js"></script>
-<script src="webgl.js"></script>
+    <script id="shader-fs" type="x-shader/x-fragment" src="frag.glsl"> </script>
+    <script id="shader-vs" type="x-shader/x-vertex" src="vert.glsl"></script>
+    <script type="text/javascript" src="https://raw.githack.com/toji/gl-matrix/master/dist/gl-matrix.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script type="text/javascript" src="webgl.js"></script>
 <body onLoad="setupGL();">
 Hello WebGL, comment ça va?<br/>
 <canvas id="webgl-bed" width=640 height=480/>
+<div id="viz"></div>
+    <script type="text/javascript">
+
+    var sampleSVG = d3.select("#viz")
+        .append("svg")
+        .attr("width", 100)
+        .attr("height", 100);    
+
+    sampleSVG.append("circle")
+        .style("stroke", "gray")
+        .style("fill", "white")
+        .attr("r", 40)
+        .attr("cx", 50)
+        .attr("cy", 50)
+        .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
+        .on("mouseout", function(){d3.select(this).style("fill", "white");});
+    
+    </script>
 </body>
 </html>
