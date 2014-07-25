@@ -83,7 +83,7 @@ function setupGL()
 function getNeuron()
 {
     var req=new XMLHttpRequest();
-    req.open("GET","load-neuron.py",false);
+    req.open("GET","neuron.json",false);
     req.setRequestHeader("User-Agent",navigator.userAgent);
     req.send(null)
 
